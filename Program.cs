@@ -2,9 +2,6 @@ using System.Collections;
 
 var builder = WebApplication.CreateBuilder(args);
 
-foreach (DictionaryEntry item in Environment.GetEnvironmentVariables())
-    Console.WriteLine(">>> {0} = {1}", item.Key, item.Value);
-
 // Add services to the container.
 
 builder.Services.AddControllers();
