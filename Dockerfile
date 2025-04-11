@@ -23,10 +23,7 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 
-ENV cert_file=""
-ENV priv_key_file=""
-
-ENTRYPOINT dotnet TestApp.dll --Kestrel:Endpoints:HttpsInlineCertAndKeyFile:Certificate:Path=$cert_file --Kestrel:Endpoints:HttpsInlineCertAndKeyFile:Certificate:KeyPath=$priv_key_file
+ENTRYPOINT dotnet TestApp.dll --environment=Traefik
 
 
 
